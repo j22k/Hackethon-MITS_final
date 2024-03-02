@@ -238,27 +238,26 @@ def index():
 def find():
     data = {
         'Country Short Name': request.form.get('Country Short Name'),
-        'Year Period': request.form.get('Year Period'),
+        'Year period': request.form.get('Year period'),
         'Median Year': request.form.get('Median Year'),
         'Start Month': request.form.get('Start Month'),
         'End Month': request.form.get('End Month'),
         'Age': request.form.get('Age'),
         'Sex': request.form.get('Sex'),
-        'MUAC': request.form.get('MUAC'),
+        'MUAC(IN)': request.form.get('MUAC(IN)'),
         'WHZ': request.form.get('WHZ'),
-        'Weight': request.form.get('Weight(k6)'),
-        'Height': request.form.get('Height(in)'),
-        'HeadCircumference': request.form.get('HeadCircumference(cm)')
+        'Weight(kg)': request.form.get('Weight(kg)'),
+        'Height(in)': request.form.get('Height(in)'),
+        'Head Circumference(cm)': request.form.get('Head Circumference(cm)')
     }
     data2 = {
        'Name': request.form.get('Name'),
-        'FatherName': request.form.get('Father Name'),
-        'MotherName': request.form.get('Mother Name'),
-        'RationCardNo': request.form.get('Ration Card No'),
+        'Father Name': request.form.get('Father Name'),
+        'Mother Name': request.form.get('Mother Name'),
+        'Ration Card No': request.form.get('Ration Card No'),
         'Pincode': request.form.get('Pincode'),
-        'HealthCenterNo': request.form.get('Health center No')
+        'Health Center No': request.form.get('Health center No')
     }
-
     # Convert the dictionary to a DataFrame
     df = pd.DataFrame([data])
     df2 = pd.DataFrame([data2])
