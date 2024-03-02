@@ -193,8 +193,9 @@ grid_search.best_estimator_
 
 def findMal(df,df2):
   combined_df = pd.concat([df, df2], axis=1)
+  print("test 0 : ",combined_df)
   doc = combined_df.to_dict(orient='records')[0]
-  print(df)
+  print("test 1 :",df)
   
   le = preprocessing.LabelEncoder()
   cat_columns = df.select_dtypes(exclude='number').columns
@@ -236,11 +237,11 @@ def index():
 @app.route('/find', methods=['POST'])
 def find():
     data = {
-        'CountryShortName': request.form.get('Country Short Name'),
-        'YearPeriod': request.form.get('Year Period'),
-        'MedianYear': request.form.get('Median Year'),
-        'StartMonth': request.form.get('Start Month'),
-        'EndMonth': request.form.get('End Month'),
+        'Country Short Name': request.form.get('Country Short Name'),
+        'Year Period': request.form.get('Year Period'),
+        'Median Year': request.form.get('Median Year'),
+        'Start Month': request.form.get('Start Month'),
+        'End Month': request.form.get('End Month'),
         'Age': request.form.get('Age'),
         'Sex': request.form.get('Sex'),
         'MUAC': request.form.get('MUAC'),
